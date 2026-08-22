@@ -1,0 +1,86 @@
+<svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="1500" fill="#f8fafc"/>
+  <text x="500" y="45" text-anchor="middle" font-size="28" font-weight="bold" fill="#0f172a">RiskLens AI — Architecture</text>
+  <text x="500" y="70" text-anchor="middle" font-size="14" fill="#475569">Autonomous Payment Risk Investigation &amp; Decision System</text>
+
+  <!-- 1 Transaction/Alert intake -->
+  <rect x="330" y="100" width="340" height="60" rx="10" fill="#1e293b"/>
+  <text x="500" y="135" text-anchor="middle" font-size="16" fill="white">1. Transaction / Alert Intake</text>
+  <line x1="500" y1="160" x2="500" y2="190" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 2 Fraud detector -->
+  <rect x="280" y="190" width="440" height="60" rx="10" fill="#334155"/>
+  <text x="500" y="218" text-anchor="middle" font-size="16" fill="white">2. Fraud Detector</text>
+  <text x="500" y="238" text-anchor="middle" font-size="12" fill="#cbd5e1">Isolation Forest (anomaly) + Rule Engine (deterministic)</text>
+  <line x1="500" y1="250" x2="500" y2="280" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 3 LangGraph planner -->
+  <rect x="330" y="280" width="340" height="60" rx="10" fill="#1e293b"/>
+  <text x="500" y="315" text-anchor="middle" font-size="16" fill="white">3. LangGraph Planner</text>
+  <line x1="500" y1="340" x2="500" y2="375" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 4 agents box -->
+  <rect x="150" y="375" width="700" height="160" rx="10" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="500" y="398" text-anchor="middle" font-size="14" fill="#334155" font-weight="bold">4. Specialized Investigation Agents</text>
+
+  <rect x="180" y="415" width="290" height="50" rx="8" fill="#0ea5e9"/>
+  <text x="325" y="446" text-anchor="middle" font-size="14" fill="white">Evidence Agent</text>
+
+  <rect x="530" y="415" width="290" height="50" rx="8" fill="#0ea5e9"/>
+  <text x="675" y="446" text-anchor="middle" font-size="14" fill="white">Behavior Agent</text>
+
+  <rect x="180" y="475" width="290" height="50" rx="8" fill="#0ea5e9"/>
+  <text x="325" y="506" text-anchor="middle" font-size="14" fill="white">Network Agent</text>
+
+  <rect x="530" y="475" width="290" height="50" rx="8" fill="#0ea5e9"/>
+  <text x="675" y="506" text-anchor="middle" font-size="14" fill="white">Compliance Agent</text>
+
+  <line x1="500" y1="535" x2="500" y2="570" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 5 Shared case memory -->
+  <rect x="280" y="570" width="440" height="60" rx="10" fill="#334155"/>
+  <text x="500" y="605" text-anchor="middle" font-size="16" fill="white">5. Shared Case Memory</text>
+  <line x1="500" y1="630" x2="500" y2="660" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 6 Risk assessment -->
+  <rect x="280" y="660" width="440" height="60" rx="10" fill="#1e293b"/>
+  <text x="500" y="695" text-anchor="middle" font-size="16" fill="white">6. Risk Assessment (deterministic score)</text>
+
+  <!-- loop back arrow -->
+  <path d="M 280 690 C 120 690 120 460 180 440" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <text x="60" y="580" font-size="11" fill="#dc2626" transform="rotate(-90 60 580)">Insufficient evidence — loop back (max 2)</text>
+
+  <line x1="500" y1="720" x2="500" y2="750" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 7 Human reviewer -->
+  <rect x="280" y="750" width="440" height="60" rx="10" fill="#0d9488"/>
+  <text x="500" y="785" text-anchor="middle" font-size="16" fill="white">7. Human Reviewer</text>
+  <line x1="500" y1="810" x2="500" y2="840" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 8 Decision -->
+  <rect x="280" y="840" width="440" height="60" rx="10" fill="#1e293b"/>
+  <text x="500" y="868" text-anchor="middle" font-size="16" fill="white">8. Decision</text>
+  <text x="500" y="888" text-anchor="middle" font-size="12" fill="#cbd5e1">ALLOW / REVIEW / BLOCK</text>
+  <line x1="500" y1="900" x2="500" y2="930" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 9 Explainability -->
+  <rect x="280" y="930" width="440" height="60" rx="10" fill="#334155"/>
+  <text x="500" y="965" text-anchor="middle" font-size="16" fill="white">9. Explainability (Groq)</text>
+  <line x1="500" y1="990" x2="500" y2="1020" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 10 Audit -->
+  <rect x="280" y="1020" width="440" height="60" rx="10" fill="#1e293b"/>
+  <text x="500" y="1055" text-anchor="middle" font-size="16" fill="white">10. Audit Report</text>
+  <line x1="500" y1="1080" x2="500" y2="1110" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 11 Human feedback loop -->
+  <rect x="280" y="1110" width="440" height="60" rx="10" fill="#0d9488"/>
+  <text x="500" y="1145" text-anchor="middle" font-size="16" fill="white">11. Human Feedback Loop</text>
+
+  <text x="500" y="1230" text-anchor="middle" font-size="13" fill="#64748b">All data synthetic. Groq is the only LLM provider. Python owns every numeric score and policy decision.</text>
+</svg>
