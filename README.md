@@ -1,9 +1,12 @@
 # RiskLens AI
 
 **An AI agent that investigates suspicious payments before a human ever sees them.**
-AI Risk Manager track.
+Built for the Razorpay AI Buildathon 2026 — AI Risk Manager track.
 
-All data used is **synthetic**. No real paysim, customer, or payment data is used anywhere in this project.
+All data used is **synthetic**. No real Razorpay, customer, or payment data is used anywhere in this project.
+
+**🔗 Live demo: [risklens-frontend-z0n3.onrender.com](https://risklens-frontend-z0n3.onrender.com)** — no install needed, click and explore.
+> Runs on a free tier that sleeps after inactivity — if it looks blank for the first ~40 seconds, it's just waking up, not broken.
 
 ---
 
@@ -60,9 +63,9 @@ The synthetic dataset has a ground-truth fraud label. The detector is trained on
 
 False-positive and false-negative costs (₹150 and ₹5,000 per case) are configurable assumptions for illustration, not real business figures.
 
-## Run it
+## Run it locally (optional)
 
-You need **Docker Desktop** and a **Groq API key** (optional — see below).
+The live demo above needs nothing installed. If you want to run it yourself, you need **Docker Desktop** and a **Groq API key** (optional — see below).
 
 ```powershell
 # 1. Copy .env.example to .env and paste your GROQ_API_KEY (or leave blank)
@@ -96,4 +99,4 @@ pytest -v
 
 ## What this isn't
 
-This is a prototype on synthetic data — not a production fraud system, not connected to real paysim data, and not regulator-approved. The evaluation numbers above are real but come from a small synthetic sample and shouldn't be read as production accuracy.
+This is a buildathon prototype on synthetic data — not a production fraud system, not connected to real Razorpay data, and not regulator-approved. The evaluation numbers above are real but come from a small synthetic sample and shouldn't be read as production accuracy.
