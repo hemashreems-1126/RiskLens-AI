@@ -1,0 +1,42 @@
+databases:
+  - name: risklens-db
+    plan: free
+    databaseName: risklens
+    user: risklens
+
+services:
+  - type: web
+    name: risklens-backend
+    runtime: docker
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: risklens-db
+          property: connectionString
+      - key: FORCE_MOCK_LLM
+        value: "true"
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: MAX_INVESTIGATION_LOOPS
+        value: "2"
+      - key: FALSE_POSITIVE_COST
+        value: "150"
+      - key: FALSE_NEGATIVE_COST
+        value: "5000"
+
+  - type: web
+    name: risklens-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: "https://risklens-backend.onrender.com"
+        # After the backend deploys, check its actual URL in the Render
+        # dashboard (it may differ if "risklens-backend" was already taken).
+        # If it differs, update this value here and click "Manual Deploy"
+        # on the frontend service once.
