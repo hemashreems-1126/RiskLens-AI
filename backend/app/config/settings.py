@@ -41,8 +41,10 @@ class Settings:
 
     # --- App ---
     APP_ENV: str = os.getenv("APP_ENV", "development")
-    CORS_ORIGINS: list = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000").split(",")
-
+    CORS_ORIGINS: list = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:4173,http://localhost:5173,http://localhost:3000",
+).split(",")
 
 @lru_cache
 def get_settings() -> Settings:
